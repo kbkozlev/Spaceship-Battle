@@ -17,8 +17,6 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 
-#BORDER = pygame.Rect((WIDTH/2)-5, 0, 10, HEIGHT)
-
 BULLET_HIT_SOUND = pygame.mixer.Sound(os.path.join('Assets', 'Grenade+1.wav'))
 BULLET_FIRE_SOUND = pygame.mixer.Sound(os.path.join('Assets', 'Gun+Silencer.wav'))
 BATTLE_SOUND = pygame.mixer.Sound(os.path.join('Assets', 'star-ship-battle.wav'))
@@ -80,7 +78,6 @@ def start_game():
 
 def draw_window(red, yellow, red_bullets, yellow_bullets, red_health, yellow_health):
     WIN.blit(SPACE, (0, 0))
-    #pygame.draw.rect(WIN, BLACK, BORDER)
 
     red_health_text = HEALTH_FONT.render("Health: " + str(red_health), True, WHITE)
     yellow_health_text = HEALTH_FONT.render("Health: " + str(yellow_health), True, WHITE)
@@ -102,7 +99,7 @@ def draw_window(red, yellow, red_bullets, yellow_bullets, red_health, yellow_hea
 def yellow_handle_movement(keys_pressed, yellow):
     if keys_pressed[pygame.K_a] and yellow.x - VEL > 0:  # LEFT
         yellow.x -= VEL
-    if keys_pressed[pygame.K_d] and yellow.x + VEL + yellow.width + SPACESHIP_WIDTH < WIDTH: #< BORDER.x:  # RIGHT
+    if keys_pressed[pygame.K_d] and yellow.x + VEL + yellow.width + SPACESHIP_WIDTH < WIDTH: # RIGHT
         yellow.x += VEL
     if keys_pressed[pygame.K_w] and yellow.y - VEL > 0:  # UP
         yellow.y -= VEL
@@ -111,7 +108,7 @@ def yellow_handle_movement(keys_pressed, yellow):
 
 
 def red_handle_movement(keys_pressed, red):
-    if keys_pressed[pygame.K_LEFT] and red.x - VEL - SPACESHIP_WIDTH > 0:# > BORDER.x + BORDER.width:  # LEFT
+    if keys_pressed[pygame.K_LEFT] and red.x - VEL - SPACESHIP_WIDTH > 0: # LEFT
         red.x -= VEL
     if keys_pressed[pygame.K_RIGHT] and red.x + VEL + red.width < WIDTH:  # RIGHT
         red.x += VEL
