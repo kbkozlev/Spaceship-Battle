@@ -16,7 +16,7 @@ BORDER = pygame.Rect((WIDTH/2)-5, 0, 10, HEIGHT)
 
 BULLET_HIT_SOUND = pygame.mixer.Sound(os.path.join('Assets', 'Grenade+1.wav'))
 BULLET_FIRE_SOUND = pygame.mixer.Sound(os.path.join('Assets', 'Gun+Silencer.wav'))
-BATTLE_SOUND = pygame.mixer.Sound(os.path.join('Assets', 'star-ship-battle.mp3'))
+BATTLE_SOUND = pygame.mixer.Sound(os.path.join('Assets', 'star-ship-battle.wav'))
 
 HEALTH_FONT = pygame.font.SysFont('comicsans', 40)
 WINNER_FONT = pygame.font.SysFont('comicsans', 100)
