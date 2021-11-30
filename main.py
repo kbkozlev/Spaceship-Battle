@@ -1,7 +1,12 @@
+import sys
 import pygame
 import os
+
 pygame.font.init()
 pygame.mixer.init()
+
+pygame_icon = pygame.image.load(os.path.join('Assets', 'space_fighter.png'))
+pygame.display.set_icon(pygame_icon)
 
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -66,6 +71,7 @@ def start_game():
             if event.type == pygame.QUIT:
                 run = False
                 pygame.quit()
+                sys.exit()
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
@@ -158,6 +164,7 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
                 pygame.quit()
+                sys.exit()
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LCTRL and len(yellow_bullets) < MAX_BULLETS:
